@@ -105,27 +105,34 @@
                 <h4 class="card-title">Input Arsip Data</h4>
               </div>
               <div class="card-body">
-                    <form method="POST" action="/mahasiswa">
+                    <form method="POST" action="arsip">
                         @csrf
  
                         <div class="form-group">
                             <label>Nomor Surat</label>
-                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                            <input type="text" class="form-control" name="nomor" value="{{ old('nomor') }}">
                         </div>
                         <div class="form-group">
                             <label>Kategori</label>
-                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                            <select name="select" class="form-control select2">
+                                <option value ="1"> Virginie Keam</option>
+                                <option value ="2"> Archambault Devoy</option>
+                                <option value ="3"> Isobel Dudbridge</option>
+                                <option value ="4"> Orsa Dorran</option>
+                             </select>
+                            <input type="text" class="form-control" name="email" value="{{ old('kategori') }}">
                         </div>
                         <div class="form-group">
                             <label>Judul</label>
-                            <input type="date" class="form-control" name="dob" value="{{ old('dob') }}">
+                            <input type="text" class="form-control" name="judul" value="{{ old('judul') }}">
                         </div>
                         <div class="form-group">
                             <label>File Surat (PDF)</label>
-                            <textarea name="address" class="form-control" cols="30" rows="10">{{ old('addres') }}</textarea>
                         </div>
+                        <input type="file" class="form-control" name="file" value="{{ old('file') }}">
                         <div class="form-group">
-                            <button class="btn btn-primary">Simpan</button>
+                            <button class="btn btn-primary">Back</button>
+                            <button class="btn btn-primary">Save</button>
                         </div>
             </div>
           </div>
