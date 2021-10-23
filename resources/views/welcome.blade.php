@@ -19,13 +19,11 @@
 <body class="">
   <div class="wrapper">
     <div class="sidebar">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
-    -->
+
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-normal">
-            Kelurahan XYS
+            Menu
           </a>
         </div>
         <ul class="nav">
@@ -56,7 +54,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">ARSIP DATA</a>
+            <a class="navbar-brand" >ARSIP DATA KELURAHAN XYS</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -65,11 +63,6 @@
           </button>
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
-              <li class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
-                  <span class="d-lg-none d-md-block">Search</span>
-                </button>
-              </li>
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
@@ -106,57 +99,9 @@
           <div class="content">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title">Arsip Data</h4>
+                <h4 class="card-title">SELAMAT DATANG DI ARSIP DATA KELURAHAN XYZ</h4>
               </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table tablesorter " id="">
-                    <thead class=" text-primary">
-                      <tr>
-                        <th>
-                          Nomor Surat
-                        </th>
-                        <th>
-                          Kategori
-                        </th>
-                        <th>
-                          Judul
-                        </th>
-                        <th>
-                          Waktu Pengarsipan
-                        </th>
-                        <th>
-                          Aksi
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          123456
-                        </td>
-                        <td>
-                          Undangan
-                        </td>
-                        <td>
-                          Undangan pertemuan
-                        </td>
-                        <td >
-                          2020-10-22
-                        </td>
-                        <td>
-                            preview
-                        </td>
-                      </tr>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              
       <footer class="footer">
         <div class="container-fluid">
           <div class="copyright">

@@ -23,7 +23,7 @@
       <div class="sidebar-wrapper">
         <div class="logo">
           <a href="javascript:void(0)" class="simple-text logo-normal">
-            Kelurahan XYS
+            MENU
           </a>
         </div>
         <ul class="nav">
@@ -54,7 +54,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">ARSIP DATA</a>
+            <a class="navbar-brand" href="home">ARSIP DATA KELURAHAN XYZ</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -122,8 +122,7 @@
           <p class="text-muted">
             dindajinggan20@gmail.com
           </p>
-          <hr>
-          <a href="{{ URL::to('admin/setting') }}" class="btn btn-primary btn-block">Setting</a>
+
         </div>
       </div>      
     </div>

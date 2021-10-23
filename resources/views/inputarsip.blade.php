@@ -99,63 +99,39 @@
         </div>
       </div>
       <!-- End Navbar -->
-
-          <div class="content">
+      <div class="content">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title">Arsip Data</h4>
+                <h4 class="card-title">Input Arsip Data</h4>
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table tablesorter " id="">
-                    <thead class=" text-primary">
-                      <tr>
-                        <th>
-                          Nomor Surat
-                        </th>
-                        <th>
-                          Kategori
-                        </th>
-                        <th>
-                          Judul
-                        </th>
-                        <th>
-                          Waktu Pengarsipan
-                        </th>
-                        <th>
-                          Aksi
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          123456
-                        </td>
-                        <td>
-                          Undangan
-                        </td>
-                        <td>
-                          Undangan pertemuan
-                        </td>
-                        <td >
-                          2020-10-22
-                        </td>
-                        <td>
-                            preview
-                        </td>
-                      </tr>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <hr>
-          <a href="inputarsip" class="btn btn-primary btn-block">Input Arsip</a>
-                </div>
-              </div>
+                    <form method="POST" action="/mahasiswa">
+                        @csrf
+ 
+                        <div class="form-group">
+                            <label>Nomor Surat</label>
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal Lahir</label>
+                            <input type="date" class="form-control" name="dob" value="{{ old('dob') }}">
+                        </div>
+                        <div class="form-group">
+                            <label>Alamat</label>
+                            <textarea name="address" class="form-control" cols="30" rows="10">{{ old('addres') }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary">Simpan</button>
+                        </div>
             </div>
           </div>
         </div>
       </div>
+          
       <footer class="footer">
         <div class="container-fluid">
           <div class="copyright">
