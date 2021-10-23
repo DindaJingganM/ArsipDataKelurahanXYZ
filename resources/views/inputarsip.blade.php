@@ -117,11 +117,11 @@
                             <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                         </div>
                         <div class="form-group">
-                            <label>Tanggal Lahir</label>
+                            <label>Judul</label>
                             <input type="date" class="form-control" name="dob" value="{{ old('dob') }}">
                         </div>
                         <div class="form-group">
-                            <label>Alamat</label>
+                            <label>File Surat (PDF)</label>
                             <textarea name="address" class="form-control" cols="30" rows="10">{{ old('addres') }}</textarea>
                         </div>
                         <div class="form-group">
