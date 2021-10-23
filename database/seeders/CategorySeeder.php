@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace Database\Seeders;
 
+use Illuminate\Database\Seeder;
+use App\Models\Category;
 class CategorySeeder extends Seeder
 {
     /**
@@ -11,17 +13,18 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('category')->insert([
-            'nama'=>'Undangan'
-            ]);
-        DB::table('category')->insert([
-            'nama'=>'Pengumuman'
-            ]);
-        DB::table('category')->insert([
-            'nama'=>'Nota Dinas'
-            ]);
-        DB::table('category')->insert([
-            'nama'=>'Pengumuman'
-                ]);
+        
+Category::create([
+    'nama'=>'Undangan'
+    ]);
+    Category::create([
+    'nama'=>'Pengumuman'
+    ]);
+    Category::create([
+    'nama'=>'Nota Dinas'
+    ]);
+    Category::create([
+    'nama'=>'Pengumuman'
+        ]);
     }
 }

@@ -17,7 +17,7 @@ class CreateDatas extends Migration
                     $table->bigIncrements('id');
                     $table->string('nomor_surat');
                     $table->BigInteger('id_kategori');
-                    $table->foreign('id_kategori')->references('id')->on('categorys')->onUpdate('cascade')->onDelete('cascade');
+                    $table->foreign('id_kategori')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
                     $table->string('judul');
                     $table->date('tanggal_arsip');
                     $table->string('surat');
