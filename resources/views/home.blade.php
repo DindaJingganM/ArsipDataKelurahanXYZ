@@ -33,56 +33,30 @@
       </div>
     </div>
     <div class="main-panel">
-
-      <!-- End Navbar -->
-      <div class="content">
-            <div class="card ">
-              <div class="card-header">
-                <h4 class="card-title">Input Arsip Data</h4>
-              </div>
-              <div class="card-body">
-                @if(session('status'))
-                  <div class='alert alert-success'>
-                    {{session('status')}}
-                  </div>
-                @endif
-                    <form method="POST" action="arsip">
-                        @csrf
- 
-                        <div class="form-group">
-                            <label >Nomor Surat</label>
-                            <input type="text" name="nomor_surat" class="form-control" required="">
-                        </div>
-                        <div class="form-group">
-                            <label >Kategori</label>
-                            <select class="form-control" name="kategori" required="">
-                              <option value="Undangan">Undangan</option>
-                              <option value="Pengumuman">Pengumuman</option>
-                              <option value="Nota Dinas">Nota Dinas</option>
-                              <option value="Pemberitahuan">Pemberitahuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label >Judul</label>
-                            <input type="text" class="form-control" name="judul" required="">
-                        </div>
-                        <div class="form-group">
-                            <label >Tanggal Arsip</label>
-                            <input type="date"  name="tanggal_arsip" class="form-control" required="">
-                        </div>
-                        <div class="form-group">
-                            <label>File Surat (PDF)</label>
-                        </div>
-                        <input type="file" class="form-control" name="surat" accept="application/pdf" required="">
-                        <div class="form-group">
-                            
-                            <button class="btn btn-primary">Save</button>
-                        </div>
+      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
             </div>
           </div>
         </div>
       </div>
-          
+      <!-- End Navbar -->
+
+          <div class="content">
+            <div class="card ">
+              <div class="card-header">
+                <h4 class="card-title">SELAMAT DATANG DI ARSIP DATA KELURAHAN XYZ</h4>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
       <footer class="footer">
         <div class="container-fluid">
           <div class="copyright">

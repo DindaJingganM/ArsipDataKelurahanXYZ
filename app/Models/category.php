@@ -10,7 +10,7 @@ class category extends Model
     use HasFactory;
 
     public function arsips(){
-        return $this->hasMany(dataarsip::class,'id_kategori','id');
+        return $this->hasMany(data::class,'id_kategori','id');
     }
 }
 

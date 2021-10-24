@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/arsip', 'ArsipController@index');
 Route::get('/user', 'UserController@index');
 Route::get('/inputarsip', 'InputArsipController@index');
+Route::post('/arsip', 'ArsipController@input');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

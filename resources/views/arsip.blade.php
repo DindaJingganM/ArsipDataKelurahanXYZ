@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-  <title>
-    ARSIP DATA KELURAHAN XYZ
-  </title>
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-  <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
-</head>
-
+@section('content')
 <body class="">
   <div class="wrapper">
     <div class="sidebar">
@@ -26,6 +11,12 @@
           </a>
         </div>
         <ul class="nav">
+        <li>
+            <a href="home">
+              <i class="tim-icons icon-atom"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
           <li>
             <a href="arsip">
               <i class="tim-icons icon-atom"></i>
@@ -42,62 +33,7 @@
       </div>
     </div>
     <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle d-inline">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="javascript:void(0)">ARSIP DATA KELURAHAN XYZ</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav ml-auto">
-              <li class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
-                  <span class="d-lg-none d-md-block">Search</span>
-                </button>
-              </li>
-              <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="photo">
-                    <img src="../assets/img/anime3.png" alt="Profile Photo">
-                  </div>
-                  <b class="caret d-none d-lg-block d-xl-block"></b>
-                  <p class="d-lg-none">
-                    Log out
-                  </p>
-                </a>
-                <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
-                </ul>
-              </li>
-              <li class="separator d-lg-none"></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <!-- End Navbar -->
 
           <div class="content">
@@ -105,53 +41,80 @@
               <div class="card-header">
                 <h4 class="card-title">Arsip Data</h4>
               </div>
+              
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table tablesorter " id="">
                     <thead class=" text-primary">
                       <tr>
                         <th>
-                          Nomor Surat
-                        </th>
+                          Nomor Surat</th>
                         <th>
-                          Kategori
-                        </th>
+                          Kategori</th>
                         <th>
-                          Judul
-                        </th>
+                          Judul</th>
                         <th>
-                          Waktu Pengarsipan
-                        </th>
+                          Waktu Pengarsipan</th>
                         <th>
-                          Aksi
-                        </th>
+                          Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
+                    @foreach($datas as $item)
                       <tr>
+                        <td>{{$item['nomor_surat']}}</td>
+                        <td>{{$item['kategori']}}</td>
+                        <td>{{$item['judul']}}</td>
+                        <td >{{$item['tanggal_arsip']}}</td>
                         <td>
-                          123456
-                        </td>
-                        <td>
-                          Undangan
-                        </td>
-                        <td>
-                          Undangan pertemuan
-                        </td>
-                        <td >
-                          2020-10-22
-                        </td>
-                        <td>
-                            preview
+                        <form action="" method="post">
+                                    @csrf
+                                    {{ method_field('DELETE')}}
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Anda Yakin akan melakukan delete?')">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                  </td>
+                                  <td>
+                                    <form action="" method="post">
+                                    @csrf
+                                    {{ method_field('DOWNLOAD')}}
+                                        <button type="submit" class="btn btn-primary btn-sm" onclick="return confirm('Anda Yakin akan melakukan mengunduhnya?')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                                        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                                      </svg>
+                                        </button>
+                                    </form>
+                                  </td>
+                                  <td>
+                                    <form action="" method="post">
+                                    @csrf
+                                    {{ method_field('PREVIEW')}}
+                                        <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('Anda Yakin akan melakukan mengunduhnya?')">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                                      </svg>
+                                        </button>
+                                    </form>
+                                  </td>
+                                  
                         </td>
                       </tr>
+                      
                       </tr>
+                      @endforeach
                     </tbody>
                   </table>
                   <hr>
-          <a href="inputarsip" class="btn btn-primary btn-block">Input Arsip</a>
+                  <a href="inputarsip" class="btn btn-primary btn-block">Input Arsip</a>
                 </div>
               </div>
+           
             </div>
           </div>
         </div>
@@ -224,3 +187,4 @@
 </body>
 
 </html>
+@endsection
