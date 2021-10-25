@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class data extends Model
 {
-    protected $table='datas';
-    protected $guarded=[];
-    public function categorys(){
-    return $this->belongsTo(category::class,'id_kategori');
-
-
-}
+    protected $table = 'datas';
+    protected $guarded = [];
+    public function categorys()
+    {
+        return $this->belongsTo(category::class, 'id_kategori');
+    }
 }

@@ -19,7 +19,7 @@ class CreateDatas extends Migration
                     $table->string('kategori');
                     $table->string('judul');
                     $table->date('tanggal_arsip');
-                    $table->string('surat');
+                    $table->text('surat');
                     $table->timestamps();
         });
     }

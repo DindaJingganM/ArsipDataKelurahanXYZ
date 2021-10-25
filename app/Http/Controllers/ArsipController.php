@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\data;
 use Illuminate\Http\Request;
+use Alert;
+use Carbon\Carbon;
+
+
 
 class ArsipController extends Controller
 {
@@ -15,6 +19,12 @@ class ArsipController extends Controller
 
     public function input(Request $request){
         $datas = new data;
+        $files = $request->file('surat');
+        if($files){
+            $nama_files = date('Y-m-d H:i:s').$files->getClientOriginalName();
+                    
+            
+        }
         $datas->nomor_surat = $request->nomor_surat;
         $datas->kategori = $request->kategori;
         $datas->judul = $request->judul;
@@ -22,12 +32,25 @@ class ArsipController extends Controller
         $datas->surat= $request->surat;
         if($datas->save())
         {
-            return redirect('arsip')->with('status','Data Berhasil Disimpan');
+            
+        alert()->success('Success ', 'Success');
+        return redirect('arsip');
         }
         else{
-            return redirect('arsip')->with('status','Data Gagal Disimpan');
+            alert()->error('Failed !', 'Error');
+        return redirect('arsip');
         }
             // dd($request);
+    }
+
+    
+    public function delete($id)
+    {
+        $datas= Data::where('id', $id)->first();
+        $datas->delete();
+
+        alert()->error('Delete', 'Deleted');
+        return redirect('arsip');
     }
 
 }

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <body class="">
   <div class="wrapper">
     <div class="sidebar">
@@ -11,7 +12,7 @@
           </a>
         </div>
         <ul class="nav">
-        <li>
+          <li>
             <a href="home">
               <i class="tim-icons icon-atom"></i>
               <p>Dashboard</p>
@@ -47,29 +48,29 @@
       </div>
       <!-- End Navbar -->
 
-          <div class="content">
-            <div class="card ">
-              <div class="card-header">
-                <h4 class="card-title">SELAMAT DATANG DI ARSIP DATA KELURAHAN XYZ</h4>
-              </div>
-              
-            </div>
+      <div class="content">
+        <div class="card ">
+          <div class="card-header">
+            <h4 class="card-title">SELAMAT DATANG DI ARSIP DATA KELURAHAN XYZ</h4>
           </div>
+
         </div>
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="copyright">
-            ©
-            <script>
-              document.write(new Date().getFullYear())
-            </script> <i class="tim-icons icon-heart-2" > </i> by
-            <a>Dinda Jinggan</a>
-          </div>
-        </div>
-      </footer>
     </div>
-</div>
+  </div>
+  <footer class="footer">
+    <div class="container-fluid">
+      <div class="copyright">
+        ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script> <i class="tim-icons icon-heart-2"> </i> by
+        <a>Dinda Jinggan</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
   <script src="../assets/js/core/popper.min.js"></script>
@@ -111,18 +112,19 @@
             }
           }
         });
-          var simulateWindowResize = setInterval(function() {
-            window.dispatchEvent(new Event('resize'));
-          }, 180);
+        var simulateWindowResize = setInterval(function() {
+          window.dispatchEvent(new Event('resize'));
+        }, 180);
 
-          // we stop the simulation of Window Resize after the animations are completed
-          setTimeout(function() {
-            clearInterval(simulateWindowResize);
-          }, 1000);
-        });
+        // we stop the simulation of Window Resize after the animations are completed
+        setTimeout(function() {
+          clearInterval(simulateWindowResize);
+        }, 1000);
+      });
+    })
   </script>
 
 </body>
-
+<script>swal("Selamat Datang !");</script>
 </html>
 @endsection
